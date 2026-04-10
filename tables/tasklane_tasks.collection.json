@@ -1,0 +1,218 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_tasks",
+  "name": "Tasklane Tasks",
+  "attributes": [
+    {
+      "key": "taskNo",
+      "type": "string",
+      "size": 32,
+      "required": false
+    },
+    {
+      "key": "projectId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "sprintId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "assignedToUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "assignedToName",
+      "type": "string",
+      "size": 255,
+      "required": false
+    },
+    {
+      "key": "title",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "description",
+      "type": "string",
+      "size": 10000,
+      "required": false
+    },
+    {
+      "key": "status",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "priority",
+      "type": "string",
+      "size": 32,
+      "required": true
+    },
+    {
+      "key": "labels",
+      "type": "string",
+      "size": 64,
+      "required": false,
+      "array": true
+    },
+    {
+      "key": "dueDate",
+      "type": "string",
+      "size": 32,
+      "required": false
+    },
+    {
+      "key": "estimateHours",
+      "type": "integer",
+      "min": 0,
+      "max": 10000,
+      "required": true
+    },
+    {
+      "key": "estimateMinutes",
+      "type": "integer",
+      "min": 0,
+      "max": 600000,
+      "required": false
+    },
+    {
+      "key": "actualHours",
+      "type": "integer",
+      "min": 0,
+      "max": 10000,
+      "required": false
+    },
+    {
+      "key": "actualMinutes",
+      "type": "integer",
+      "min": 0,
+      "max": 600000,
+      "required": false
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "recurringEnabled",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "recurringFrequency",
+      "type": "string",
+      "size": 32,
+      "required": false
+    },
+    {
+      "key": "recurringInterval",
+      "type": "integer",
+      "min": 1,
+      "max": 365,
+      "required": false
+    },
+    {
+      "key": "lastRecurringAt",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "sourceTaskId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "createdByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "updatedByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "updatedAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "completedAt",
+      "type": "string",
+      "size": 64,
+      "required": false
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_status",
+      "type": "key",
+      "attributes": [
+        "status"
+      ]
+    },
+    {
+      "key": "idx_projectId",
+      "type": "key",
+      "attributes": [
+        "projectId"
+      ]
+    },
+    {
+      "key": "idx_sprintId",
+      "type": "key",
+      "attributes": [
+        "sprintId"
+      ]
+    },
+    {
+      "key": "idx_assignedToUserId",
+      "type": "key",
+      "attributes": [
+        "assignedToUserId"
+      ]
+    },
+    {
+      "key": "idx_isActive",
+      "type": "key",
+      "attributes": [
+        "isActive"
+      ]
+    },
+    {
+      "key": "idx_dueDate",
+      "type": "key",
+      "attributes": [
+        "dueDate"
+      ]
+    },
+    {
+      "key": "idx_updatedAt",
+      "type": "key",
+      "attributes": [
+        "updatedAt"
+      ]
+    }
+  ]
+}

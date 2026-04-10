@@ -1,0 +1,70 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_comments",
+  "name": "Tasklane Comments",
+  "attributes": [
+    {
+      "key": "taskId",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "commentText",
+      "type": "string",
+      "size": 10000,
+      "required": true
+    },
+    {
+      "key": "createdBy",
+      "type": "string",
+      "size": 128,
+      "required": false
+    },
+    {
+      "key": "createdByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "updatedByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "imageUrl",
+      "type": "string",
+      "size": 1024,
+      "required": false
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_taskId",
+      "type": "key",
+      "attributes": [
+        "taskId"
+      ]
+    },
+    {
+      "key": "idx_createdAt",
+      "type": "key",
+      "attributes": [
+        "createdAt"
+      ]
+    }
+  ]
+}

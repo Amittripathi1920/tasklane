@@ -1,0 +1,76 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_projects",
+  "name": "Tasklane Projects",
+  "attributes": [
+    {
+      "key": "name",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "description",
+      "type": "string",
+      "size": 4000,
+      "required": false
+    },
+    {
+      "key": "color",
+      "type": "string",
+      "size": 32,
+      "required": false
+    },
+    {
+      "key": "icon",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "createdByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "updatedByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "updatedAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_isActive",
+      "type": "key",
+      "attributes": [
+        "isActive"
+      ]
+    },
+    {
+      "key": "idx_updatedAt",
+      "type": "key",
+      "attributes": [
+        "updatedAt"
+      ]
+    }
+  ]
+}

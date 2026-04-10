@@ -1,0 +1,17 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "tasksCollectionId": "tasklane_tasks",
+  "commentsCollectionId": "tasklane_comments",
+  "subtasksCollectionId": "tasklane_subtasks",
+  "projectsCollectionId": "tasklane_projects",
+  "projectMembersCollectionId": "tasklane_project_members",
+  "sprintsCollectionId": "tasklane_sprints",
+  "auditCollectionId": "tasklane_audit",
+  "feedbackCollectionId": "tasklane_feedback",
+  "notesCollectionId": "tasklane_notes",
+  "usersCollectionId": "tasklane_users",
+  "sessionsCollectionId": "tasklane_sessions",
+  "aiFunctionId": "tasklane_ai_router",
+  "authFunctionId": "tasklane_auth_router",
+  "generatedAt": "2026-04-10T14:07:11.609Z"
+}

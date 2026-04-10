@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --app-bg: #f5f5f6;
+  --app-text: #23242a;
+}
+
+body.theme-dark {
+  color-scheme: dark;
+  --app-bg: #262626;
+  --app-text: #f2f4f7;
+}
+
+body.theme-light {
+  color-scheme: light;
+}
+
+@property --testing-lab-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+.theme-app {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.theme-dark .theme-app,
+.theme-dark .theme-app > div,
+.theme-dark .theme-app main {
+  background-color: #262626;
+}
+
+.theme-dark [class*="bg-[#f5f5f6]"],
+.theme-dark [class*="bg-white"],
+.theme-dark [class*="bg-[#fafafa]"],
+.theme-dark [class*="bg-[#f5f5f7]"],
+.theme-dark [class*="bg-[#f6f7fb]"],
+.theme-dark [class*="bg-[#efeff1]"],
+.theme-dark [class*="bg-[#f7f7f8]"],
+.theme-dark [class*="bg-[#fbfbfc]"],
+.theme-dark [class*="bg-[#fcfcfd]"],
+.theme-dark [class*="bg-[#f3f4f6]"],
+.theme-dark [class*="bg-[#edf2ff]"],
+.theme-dark [class*="bg-[#eef4ff]"],
+.theme-dark [class*="bg-[#f4f6fa]"] {
+  background-color: #303030 !important;
+}
+
+.theme-dark [class*="bg-[#fff4ef]"] {
+  background-color: rgba(241, 90, 36, 0.14) !important;
+}
+
+.theme-dark [class*="bg-[#fff7f7]"] {
+  background-color: rgba(190, 55, 55, 0.14) !important;
+}
+
+.theme-dark [class*="border-[#ececf0]"],
+.theme-dark [class*="border-[#e7e7ea]"],
+.theme-dark [class*="border-[#e6e7eb]"],
+.theme-dark [class*="border-[#e5e5e9]"],
+.theme-dark [class*="border-[#dfe0e5]"],
+.theme-dark [class*="border-[#d9dde7]"],
+.theme-dark [class*="border-[#f0f1f4]"] {
+  border-color: #2a313b !important;
+}
+
+.theme-dark [class*="text-[#23242a]"],
+.theme-dark [class*="text-[#1f1f1f]"] {
+  color: #f2f4f7 !important;
+}
+
+.theme-dark [class*="text-[#7b7c85]"],
+.theme-dark [class*="text-[#8f9098]"],
+.theme-dark [class*="text-[#62636b]"],
+.theme-dark [class*="text-[#585961]"],
+.theme-dark [class*="text-[#666872]"],
+.theme-dark [class*="text-[#7d818c]"],
+.theme-dark [class*="text-[#7b7c85]"],
+.theme-dark [class*="text-[#9aa0ab]"],
+.theme-dark [class*="text-[#6e7380]"] {
+  color: #a7b0bd !important;
+}
+
+.theme-dark [class*="placeholder:text-[#8f9098]"]::placeholder,
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder {
+  color: #6f7a88 !important;
+}
+
+.theme-dark header[class*="bg-white"],
+.theme-dark aside[class*="bg-[linear-gradient(180deg,#f7f7f8,#f1f1f4)"] {
+  background: linear-gradient(180deg, #303030, #2a2a2a) !important;
+}
+
+.theme-dark .ui-card {
+  background: #303030 !important;
+  border-color: #3a4048 !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
+}
+
+.theme-dark .ui-input,
+.theme-dark .ui-textarea,
+.theme-dark .ui-select-trigger,
+.theme-dark .ui-select-content,
+.theme-dark .ui-checkbox-row,
+.theme-dark .ui-dialog-shell {
+  background: #383838 !important;
+  border-color: #4a4a4a !important;
+  color: #f2f4f7 !important;
+}
+
+.theme-dark .ui-badge {
+  background: #383838 !important;
+  border-color: #4a4a4a !important;
+  color: #d3d8df !important;
+}
+
+.theme-dark .ui-tabs-list {
+  background: #383838 !important;
+  border-color: #4a4a4a !important;
+}
+
+.theme-dark .ui-tabs-trigger {
+  color: #a7b0bd !important;
+}
+
+.theme-dark .ui-tabs-trigger[data-state=\"active\"] {
+  background: #4a4a4a !important;
+  color: #f2f4f7 !important;
+}
+
+.theme-dark .ui-select-item {
+  color: #f2f4f7 !important;
+}
+
+.theme-dark .ui-select-item:hover,
+.theme-dark .ui-select-item[data-highlighted] {
+  background: #4a4a4a !important;
+}
+
+.theme-dark .taskboard-column {
+  background: #303030 !important;
+  border-color: #3a4048 !important;
+}
+
+.theme-dark .taskboard-card {
+  border-color: #454b54 !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
+}
+
+.theme-dark .shadow-\[0_8px_22px_rgba\(15\,23\,42\,0\.04\)\],
+.theme-dark .shadow-\[0_12px_28px_rgba\(15\,23\,42\,0\.06\)\],
+.theme-dark .shadow-\[0_24px_70px_rgba\(185\,86\,34\,0\.12\)\] {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28) !important;
+}
+
+.theme-dark .poster-button-base,
+.theme-dark .poster-button-wave {
+  opacity: 0.95;
+}
+
+@keyframes posterGradientDrift {
+  0% {
+    background-position: 0% 24%, 100% 8%, 18% 88%, 0% 0%;
+  }
+  25% {
+    background-position: 10% 36%, 88% 2%, 30% 82%, 38% 22%;
+  }
+  50% {
+    background-position: 20% 52%, 76% 10%, 44% 74%, 100% 100%;
+  }
+  75% {
+    background-position: 8% 40%, 92% 4%, 26% 84%, 64% 32%;
+  }
+  100% {
+    background-position: 0% 24%, 100% 8%, 18% 88%, 0% 0%;
+  }
+}
+
+@keyframes posterWaveSweep {
+  0% {
+    transform: translate3d(-24%, 14%, 0) rotate(-7deg) skewX(-8deg) scale(1.08, 0.82);
+    opacity: 0.52;
+  }
+  25% {
+    transform: translate3d(-6%, -6%, 0) rotate(-2deg) skewX(6deg) scale(1.16, 0.96);
+    opacity: 0.82;
+  }
+  50% {
+    transform: translate3d(22%, -18%, 0) rotate(7deg) skewX(10deg) scale(1.24, 1.12);
+    opacity: 0.96;
+  }
+  75% {
+    transform: translate3d(4%, 2%, 0) rotate(1deg) skewX(-5deg) scale(1.14, 0.94);
+    opacity: 0.76;
+  }
+  100% {
+    transform: translate3d(-24%, 14%, 0) rotate(-7deg) skewX(-8deg) scale(1.08, 0.82);
+    opacity: 0.52;
+  }
+}
+
+.testing-lab-poster-base {
+  animation: posterGradientDrift 6.5s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.testing-lab-poster-wave {
+  animation: posterWaveSweep 4.8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.poster-button-base {
+  animation: posterGradientDrift 6.5s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.poster-button-wave {
+  animation: posterWaveSweep 4.8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes taskCardGlowDrift {
+  0% {
+    background-position: 12% 18%, 84% 14%, 72% 82%;
+  }
+  25% {
+    background-position: 22% 10%, 70% 26%, 84% 72%;
+  }
+  50% {
+    background-position: 28% 26%, 58% 36%, 90% 60%;
+  }
+  75% {
+    background-position: 18% 22%, 74% 20%, 78% 76%;
+  }
+  100% {
+    background-position: 12% 18%, 84% 14%, 72% 82%;
+  }
+}
+
+.testing-lab-task-glow {
+  animation: taskCardGlowDrift 6.2s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.testing-lab-task-tint {
+  animation: posterWaveSweep 5.1s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.testing-lab-google-frame {
+  --testing-lab-border-angle: 0deg;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background:
+    linear-gradient(white, white) padding-box,
+    radial-gradient(circle at 28% 22%, rgba(255,226,214,0.5), transparent 22%),
+    radial-gradient(circle at 72% 18%, rgba(255,132,74,0.48), transparent 30%),
+    radial-gradient(circle at 20% 72%, rgba(255,154,121,0.34), transparent 28%),
+    conic-gradient(
+      from var(--testing-lab-border-angle),
+      #ffc6af 0deg,
+      #f7783d 120deg,
+      #b63d09 240deg,
+      #ffc6af 360deg
+    ) border-box;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+  background-size: auto, 140% 140%, 140% 140%, 140% 140%, 140% 140%;
+  background-position: 0 0, 0% 24%, 100% 8%, 18% 88%, 0% 0%;
+}
+
+@keyframes testingLabBorderSpin {
+  0% {
+    --testing-lab-border-angle: 0deg;
+  }
+  100% {
+    --testing-lab-border-angle: 360deg;
+  }
+}
+
+.testing-lab-google-frame:hover {
+  animation:
+    posterGradientDrift 1.8s ease-in-out infinite,
+    testingLabBorderSpin 1.2s linear infinite;
+  box-shadow: 0 14px 34px rgba(185, 86, 34, 0.16);
+  transform: scale(1.005);
+}

@@ -1,0 +1,59 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_sessions",
+  "name": "Tasklane Sessions",
+  "attributes": [
+    {
+      "key": "userId",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "tokenHash",
+      "type": "string",
+      "size": 128,
+      "required": true
+    },
+    {
+      "key": "expiresAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_userId",
+      "type": "key",
+      "attributes": [
+        "userId"
+      ]
+    },
+    {
+      "key": "idx_tokenHash",
+      "type": "unique",
+      "attributes": [
+        "tokenHash"
+      ]
+    },
+    {
+      "key": "idx_expiresAt",
+      "type": "key",
+      "attributes": [
+        "expiresAt"
+      ]
+    }
+  ]
+}

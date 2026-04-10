@@ -1,0 +1,70 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_users",
+  "name": "Tasklane Users",
+  "attributes": [
+    {
+      "key": "name",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "email",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "passwordHash",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "gender",
+      "type": "string",
+      "size": 16,
+      "required": false
+    },
+    {
+      "key": "role",
+      "type": "string",
+      "size": 32,
+      "required": true
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "updatedAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_email",
+      "type": "unique",
+      "attributes": [
+        "email"
+      ]
+    },
+    {
+      "key": "idx_isActive",
+      "type": "key",
+      "attributes": [
+        "isActive"
+      ]
+    }
+  ]
+}

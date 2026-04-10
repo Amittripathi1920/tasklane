@@ -1,0 +1,109 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_notes",
+  "name": "Tasklane Notes",
+  "attributes": [
+    {
+      "key": "type",
+      "type": "string",
+      "size": 32,
+      "required": true
+    },
+    {
+      "key": "title",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "content",
+      "type": "string",
+      "size": 50000,
+      "required": false
+    },
+    {
+      "key": "userId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "userName",
+      "type": "string",
+      "size": 255,
+      "required": false
+    },
+    {
+      "key": "projectId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "createdByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "updatedByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "updatedAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_type",
+      "type": "key",
+      "attributes": [
+        "type"
+      ]
+    },
+    {
+      "key": "idx_userId",
+      "type": "key",
+      "attributes": [
+        "userId"
+      ]
+    },
+    {
+      "key": "idx_projectId",
+      "type": "key",
+      "attributes": [
+        "projectId"
+      ]
+    },
+    {
+      "key": "idx_isActive",
+      "type": "key",
+      "attributes": [
+        "isActive"
+      ]
+    },
+    {
+      "key": "idx_updatedAt",
+      "type": "key",
+      "attributes": [
+        "updatedAt"
+      ]
+    }
+  ]
+}

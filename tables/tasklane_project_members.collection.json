@@ -1,0 +1,78 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_project_members",
+  "name": "Tasklane Project Members",
+  "attributes": [
+    {
+      "key": "projectId",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "userId",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "role",
+      "type": "string",
+      "size": 32,
+      "required": true
+    },
+    {
+      "key": "addedBy",
+      "type": "string",
+      "size": 255,
+      "required": false
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "updatedAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_projectId",
+      "type": "key",
+      "attributes": [
+        "projectId"
+      ]
+    },
+    {
+      "key": "idx_userId",
+      "type": "key",
+      "attributes": [
+        "userId"
+      ]
+    },
+    {
+      "key": "idx_role",
+      "type": "key",
+      "attributes": [
+        "role"
+      ]
+    },
+    {
+      "key": "idx_isActive",
+      "type": "key",
+      "attributes": [
+        "isActive"
+      ]
+    }
+  ]
+}

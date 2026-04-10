@@ -1,0 +1,115 @@
+{
+  "databaseId": "69a6ba4c0002926e8ef4",
+  "collectionId": "tasklane_feedback",
+  "name": "Tasklane Feedback",
+  "attributes": [
+    {
+      "key": "userId",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "userName",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "userEmail",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "type",
+      "type": "string",
+      "size": 32,
+      "required": true
+    },
+    {
+      "key": "title",
+      "type": "string",
+      "size": 255,
+      "required": true
+    },
+    {
+      "key": "message",
+      "type": "string",
+      "size": 10000,
+      "required": true
+    },
+    {
+      "key": "status",
+      "type": "string",
+      "size": 32,
+      "required": true
+    },
+    {
+      "key": "isActive",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "key": "createdByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "updatedByUserId",
+      "type": "string",
+      "size": 64,
+      "required": false
+    },
+    {
+      "key": "createdAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    },
+    {
+      "key": "updatedAt",
+      "type": "string",
+      "size": 64,
+      "required": true
+    }
+  ],
+  "indexes": [
+    {
+      "key": "idx_userId",
+      "type": "key",
+      "attributes": [
+        "userId"
+      ]
+    },
+    {
+      "key": "idx_type",
+      "type": "key",
+      "attributes": [
+        "type"
+      ]
+    },
+    {
+      "key": "idx_status",
+      "type": "key",
+      "attributes": [
+        "status"
+      ]
+    },
+    {
+      "key": "idx_isActive",
+      "type": "key",
+      "attributes": [
+        "isActive"
+      ]
+    },
+    {
+      "key": "idx_createdAt",
+      "type": "key",
+      "attributes": [
+        "createdAt"
+      ]
+    }
+  ]
+}

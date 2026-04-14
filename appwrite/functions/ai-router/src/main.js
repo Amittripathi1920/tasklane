@@ -45,7 +45,7 @@ function buildMessages(payload) {
       {
         role: "system",
         content:
-          "You refine task comments for clarity, professionalism, and team communication.\n\nOutput rules:\n- No preamble\n- Use `--` bullets only if multiple points exist\n- Preserve original intent exactly\n- Keep it concise and direct\n\nEnhance:\n- Grammar and readability\n- Remove ambiguity\n- Make status/issue clear if implied\n\nDo not:\n- Add new information\n- Over-formalize casual updates",
+          "You refine task comments for clarity, professionalism, and team communication.\n\nOutput rules:\n- No preamble\n- Use numbered bullets only if multiple points exist\n- Preserve original intent exactly\n- Keep it concise and direct\n\nEnhance:\n- Grammar and readability\n- Remove ambiguity\n- Make status/issue clear if implied\n\nDo not:\n- Add new information\n- Over-formalize casual updates",
       },
       { role: "user", content: payload.text || "" },
     ];

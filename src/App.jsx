@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AlertCircle,
   ArrowUpRight,
@@ -3121,82 +3121,91 @@ function TopBar({
 
 function AuthPage({ mode, setMode, form, setForm, onSubmit, loading, error }) {
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#fff7f2,#f4f6fb)] px-4 py-8 text-[#23242a]">
-      <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl items-center gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <div className="rounded-[36px] border border-[#eadfd8] bg-[radial-gradient(circle_at_20%_18%,rgba(255,206,181,0.42),transparent_24%),radial-gradient(circle_at_78%_16%,rgba(255,122,66,0.34),transparent_26%),linear-gradient(135deg,#fff6f1,#ffe1d2_42%,#ffd0b8)] p-8 shadow-[0_24px_70px_rgba(185,86,34,0.12)]">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9b5e44]">Tasklane AI Tracker</p>
-          <h1 className="mt-3 text-4xl font-semibold leading-tight text-[#4a2411]">Private workspace for delivery, planning, and AI-powered updates.</h1>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-[#7f5d52]">
-            Sign in to access your projects, sprints, analytics, and collaborative task workspace. This custom auth flow uses hashed passwords and function-issued sessions.
+    <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(180deg,#fff7f2,#f4f6fb)] px-4 py-8 text-[#23242a]">
+      <Card className="mx-auto w-full max-w-[460px] p-6">
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8f9098]">{mode === "signup" ? "Create account" : "Sign in"}</p>
+          <h2 className="mt-2 text-3xl font-semibold text-[#23242a]">{mode === "signup" ? "Join Tasklane" : "Welcome back"}</h2>
+          <p className="mt-2 text-sm text-[#7b7c85]">
+            {mode === "signup" ? "Create your first workspace owner account." : "Enter your credentials to continue."}
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <MiniMetric label="Projects" value="Scoped" />
-            <MiniMetric label="Passwords" value="Hashed" />
-            <MiniMetric label="Sessions" value="Function-based" />
-          </div>
+          {mode === "login" && (
+            <div className="mt-4 rounded-2xl border border-[#e5e5e9] bg-[#fafafa] p-4 text-sm text-[#23242a] shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="font-semibold text-xs uppercase tracking-wider text-[#7b7c85]">Demo Account</span>
+                <button
+                  type="button"
+                  onClick={() => setForm((current) => ({ ...current, email: "test@test.commm", password: "Test@123" }))}
+                  className="text-xs font-semibold text-[#2160ff] hover:underline"
+                >
+                  Autofill credentials
+                </button>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-[#62636b]">
+                <div>
+                  <span className="block text-[10px] uppercase text-[#8f9098]">Email</span>
+                  <span className="font-mono font-medium text-[#23242a]">test@test.commm</span>
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase text-[#8f9098]">Password</span>
+                  <span className="font-mono font-medium text-[#23242a]">Test@123</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        <Card className="mx-auto w-full max-w-[460px] p-6">
-          <div className="mb-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8f9098]">{mode === "signup" ? "Create account" : "Sign in"}</p>
-            <h2 className="mt-2 text-3xl font-semibold text-[#23242a]">{mode === "signup" ? "Join Tasklane" : "Welcome back"}</h2>
-            <p className="mt-2 text-sm text-[#7b7c85]">
-              {mode === "signup" ? "Create your first workspace owner account." : "Enter your credentials to continue."}
-            </p>
-          </div>
-
-          <form className="space-y-4" onSubmit={onSubmit}>
-            {mode === "signup" ? (
-              <Field label="Name">
-                <Input
-                  className="border-[#e5e5e9] bg-[#fafafa] text-[#1f1f1f]"
-                  value={form.name}
-                  onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-                  placeholder="Your name"
-                />
-              </Field>
-            ) : null}
-            <Field label="Email">
+        <form className="space-y-4" onSubmit={onSubmit}>
+          {mode === "signup" ? (
+            <Field label="Name">
               <Input
                 className="border-[#e5e5e9] bg-[#fafafa] text-[#1f1f1f]"
-                type="email"
-                value={form.email}
-                onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-                placeholder="name@company.com"
+                value={form.name}
+                onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
+                placeholder="Your name"
               />
             </Field>
-            <Field label="Password">
-              <Input
-                className="border-[#e5e5e9] bg-[#fafafa] text-[#1f1f1f]"
-                type="password"
-                value={form.password}
-                onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
-                placeholder="At least 8 characters"
-              />
-            </Field>
-            {error ? (
-              <div className="rounded-[18px] border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-600">{error}</div>
-            ) : null}
-            <Button className="w-full bg-[#2160ff] text-white hover:bg-[#184ed4]" type="submit" disabled={loading}>
-              {loading ? <LoaderCircle className="mr-2 h-4 w-4 animate-spin" /> : null}
-              {mode === "signup" ? "Create account" : "Sign in"}
-            </Button>
-          </form>
+          ) : null}
+          <Field label="Email">
+            <Input
+              className="border-[#e5e5e9] bg-[#fafafa] text-[#1f1f1f]"
+              type="email"
+              value={form.email}
+              onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
+              placeholder="name@company.com"
+            />
+          </Field>
+          <Field label="Password">
+            <Input
+              className="border-[#e5e5e9] bg-[#fafafa] text-[#1f1f1f]"
+              type="password"
+              value={form.password}
+              onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
+              placeholder="At least 8 characters"
+            />
+          </Field>
+          {error ? (
+            <div className="rounded-[18px] border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-600">{error}</div>
+          ) : null}
+          <Button className="w-full bg-[#2160ff] text-white hover:bg-[#184ed4]" type="submit" disabled={loading}>
+            {loading ? <LoaderCircle className="mr-2 h-4 w-4 animate-spin" /> : null}
+            {mode === "signup" ? "Create account" : "Sign in"}
+          </Button>
+        </form>
 
-          <div className="mt-5 flex items-center justify-between gap-3 text-sm">
-            <span className="text-[#7b7c85]">
-              {mode === "signup" ? "Already have an account?" : "Need an account?"}
-            </span>
-            <button
-              type="button"
-              onClick={() => setMode(mode === "signup" ? "login" : "signup")}
-              className="font-semibold text-[#2160ff]"
-            >
-              {mode === "signup" ? "Sign in" : "Create one"}
-            </button>
-          </div>
-        </Card>
-      </div>
+        <div className="mt-5 flex items-center justify-between gap-3 text-sm">
+          <span className="text-[#7b7c85]">
+            {mode === "signup" ? "Already have an account?" : "Need an account?"}
+          </span>
+          <button
+            type="button"
+            onClick={() => setMode(mode === "signup" ? "login" : "signup")}
+            className="font-semibold text-[#2160ff]"
+          >
+            {mode === "signup" ? "Sign in" : "Create one"}
+          </button>
+        </div>
+      </Card>
     </div>
   );
 }
